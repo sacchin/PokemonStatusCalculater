@@ -9,3 +9,6 @@
 .externalNativeBuild
 vcs.xml
 .idea
+gradlew
+gradlew.bat
+gradle-wrapper.jar
