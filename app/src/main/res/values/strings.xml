@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="s">s固定計算</string>
+    <string name="all">実数値計算</string>
+    <string name="title_activity_all_calc">AllCalcActivity</string>
+    <string name="title_activity_speed_calc">SpeedCalcActivity</string>
 </resources>
