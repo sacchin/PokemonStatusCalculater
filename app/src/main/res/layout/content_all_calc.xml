@@ -75,7 +75,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:hint="@string/ev_hint" />
+                    android:hint="@string/ev_hint"
+                    android:inputType="number" />
 
                 <TextView
                     android:id="@+id/hAv"
@@ -112,7 +113,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:hint="@string/ev_hint" />
+                    android:hint="@string/ev_hint"
+                    android:inputType="number" />
 
                 <TextView
                     android:id="@+id/aAv"
@@ -150,7 +152,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:hint="@string/ev_hint" />
+                    android:hint="@string/ev_hint"
+                    android:inputType="number" />
 
                 <TextView
                     android:id="@+id/bAv"
@@ -188,7 +191,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:hint="@string/ev_hint" />
+                    android:hint="@string/ev_hint"
+                    android:inputType="number" />
 
                 <TextView
                     android:id="@+id/cAv"
@@ -226,7 +230,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:hint="@string/ev_hint" />
+                    android:hint="@string/ev_hint"
+                    android:inputType="number" />
 
                 <TextView
                     android:id="@+id/dAv"
@@ -266,6 +271,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:hint="@string/ev_hint"
+                    android:inputType="number"
                     android:paddingEnd="4dp"
                     android:paddingStart="4dp" />
 
