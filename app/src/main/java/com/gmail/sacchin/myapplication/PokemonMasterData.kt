@@ -1,6 +1,5 @@
 package com.gmail.sacchin.myapplication
 
-import com.gmail.sacchin.myapplication.MegaPokemonMasterData
 import io.realm.RealmObject
 import io.realm.annotations.RealmClass
 
@@ -64,4 +63,37 @@ open class PokemonMasterData(
 
         return result.toTypedArray()
     }
+
+    fun hpFormula(bs: Int, iv: Int, ev: Int): Int {
+        val baseStat = if (bs < 0) 1 else bs
+        val effort = if (ev < 0 || 252 < ev) 0 else ev
+        val individual = if (iv < 0 || 31 < iv) 0 else iv
+        return (baseStat * 2 + individual + effort / 4) / 2 + 60
+    }
+
+    fun otherFormula(bs: Int, iv: Int, ev: Int): Int {
+        val baseStat = if (bs < 0) 1 else bs
+        val effort = if (ev < 0 || 252 < ev) 0 else ev
+        val individual = if (iv < 0 || 31 < iv) 0 else iv
+        return (baseStat * 2 + individual + effort / 4) / 2 + 5
+    }
+
+    fun hp(iv: Int, ev: Int): Int = hpFormula(h, iv, ev)
+    fun hpX(iv: Int, ev: Int): Int = megax?.let { hpFormula(it.h, iv, ev) } ?: hp(iv, ev)
+    fun hpY(iv: Int, ev: Int): Int = megay?.let { hpFormula(it.h, iv, ev) } ?: hp(iv, ev)
+    fun attack(iv: Int, ev: Int): Int = otherFormula(a, iv, ev)
+    fun attackX(iv: Int, ev: Int): Int = megax?.let { otherFormula(it.a, iv, ev) } ?: attack(iv, ev)
+    fun attackY(iv: Int, ev: Int): Int = megay?.let { otherFormula(it.a, iv, ev) } ?: attack(iv, ev)
+    fun defense(iv: Int, ev: Int): Int = otherFormula(b, iv, ev)
+    fun defenseX(iv: Int, ev: Int): Int = megax?.let { otherFormula(it.b, iv, ev) } ?: defense(iv, ev)
+    fun defenseY(iv: Int, ev: Int): Int = megay?.let { otherFormula(it.b, iv, ev) } ?: defense(iv, ev)
+    fun specialAttack(iv: Int, ev: Int): Int = otherFormula(c, iv, ev)
+    fun specialAttackX(iv: Int, ev: Int): Int = megax?.let { otherFormula(it.c, iv, ev) } ?: specialAttack(iv, ev)
+    fun specialAttackY(iv: Int, ev: Int): Int = megay?.let { otherFormula(it.c, iv, ev) } ?: specialAttack(iv, ev)
+    fun specialDefense(iv: Int, ev: Int): Int = otherFormula(d, iv, ev)
+    fun specialDefenseX(iv: Int, ev: Int): Int = megax?.let { otherFormula(it.d, iv, ev) } ?: specialDefense(iv, ev)
+    fun specialDefenseY(iv: Int, ev: Int): Int = megay?.let { otherFormula(it.d, iv, ev) } ?: specialDefense(iv, ev)
+    fun speed(iv: Int, ev: Int): Int = otherFormula(s, iv, ev)
+    fun speedX(iv: Int, ev: Int): Int = megax?.let { otherFormula(it.s, iv, ev) } ?: speed(iv, ev)
+    fun speedY(iv: Int, ev: Int): Int = megay?.let { otherFormula(it.s, iv, ev) } ?: speed(iv, ev)
 }
