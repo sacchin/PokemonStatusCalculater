@@ -35,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         if (serviceStatePreferences.getBoolean("isFirst", true)) {
             PokemonInsertHandler(databaseHelper).run()
             MegaPokemonInsertHandler(databaseHelper).run()
+
+            databaseHelper.insertSpeed()
+
             val editor = serviceStatePreferences.edit()
             editor.putBoolean("isFirst", false)
             editor.apply()
