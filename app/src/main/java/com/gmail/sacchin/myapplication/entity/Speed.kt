@@ -37,4 +37,8 @@ open class Speed(
         return base
     }
 
+    override fun toString(): String {
+        return key()
+    }
+
 }

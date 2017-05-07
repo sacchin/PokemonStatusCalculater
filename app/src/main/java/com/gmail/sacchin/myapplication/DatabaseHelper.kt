@@ -106,9 +106,10 @@ open class DatabaseHelper(context: Context) {
                             realm.createObject(Speed::class.java).apply {
                                 this.bs = bs
                                 this.ev = ev
-                                this.av = PokemonMasterData.otherFormula(bs, 31, ev)
                                 this.characteristic = characteristic
                                 this.other = correction
+                                this.av = PokemonMasterData.otherFormula(bs, 31, ev)
+                                        .times(charCorrection()).toInt().times(otherCorrection()).toInt()
                             }
                         }
                     }
@@ -120,7 +121,6 @@ open class DatabaseHelper(context: Context) {
     fun insertMegaPokemonDataY(no: String, h: Int, a: Int, b: Int, c: Int, d: Int, s: Int, ability: String, weight: Float) {
         insertMegaPokemonDataY(no, h, a, b, c, d, s, Type.no(Type.Code.UNKNOWN), Type.no(Type.Code.UNKNOWN), ability, weight)
     }
-
 
     fun selectPokemonMasterData(pokemonNo: String?): PokemonMasterData {
         val pokemon = realm.where(PokemonMasterData().javaClass).equalTo("no", pokemonNo).findFirst()

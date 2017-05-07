@@ -10,8 +10,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.gmail.sacchin.myapplication.DatabaseHelper
-import com.gmail.sacchin.myapplication.entity.PokemonForCalc
 import com.gmail.sacchin.myapplication.R
+import com.gmail.sacchin.myapplication.entity.PokemonForCalc
 import com.gmail.sacchin13.pokemonbattleanalyzer.entity.Characteristic
 import kotlinx.android.synthetic.main.activity_all_calc.*
 import kotlinx.android.synthetic.main.content_all_calc.*

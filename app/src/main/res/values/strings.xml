@@ -1,11 +1,10 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="s">s固定計算</string>
-    <string name="all">実数値計算</string>
-    <string name="title_activity_all_calc">AllCalcActivity</string>
-    <string name="title_activity_speed_calc">SpeedCalcActivity</string>
+    <string name="app_name">PokeStatus</string>
+    <string name="title_activity_all_calc">実数値計算</string>
+    <string name="title_activity_speed_calc">抜き調整計算</string>
     <string name="header_h">H</string>
     <string name="ev_hint">252</string>
+    <string name="other_hint">その他補正</string>
     <string name="header_a">A</string>
     <string name="header_b">B</string>
     <string name="header_c">C</string>
@@ -13,6 +12,6 @@
     <string name="header_s">S</string>
     <string name="default_value">0</string>
     <string name="characteristic">性格</string>
-    <string name="min">min</string>
+    <string name="seekbar_label">実数値</string>
     <string name="max">max</string>
 </resources>

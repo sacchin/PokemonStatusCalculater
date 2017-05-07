@@ -9,7 +9,6 @@ import com.gmail.sacchin.myapplication.DatabaseHelper
 import com.gmail.sacchin.myapplication.MegaPokemonInsertHandler
 import com.gmail.sacchin.myapplication.PokemonInsertHandler
 import com.gmail.sacchin.myapplication.R
-import com.gmail.sacchin.myapplication.activity.AllCalcActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.onClick
 import kotlin.properties.Delegates
