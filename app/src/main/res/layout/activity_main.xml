@@ -5,7 +5,7 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.gmail.sacchin.myapplication.MainActivity">
+    tools:context="com.gmail.sacchin.myapplication.activity.MainActivity">
 
     <Button
         android:id="@+id/all_calc"
@@ -15,7 +15,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/all"
+        android:text="@string/title_activity_all_calc"
         app:layout_constraintBottom_toTopOf="@+id/s_calc"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -30,7 +30,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/s"
+        android:text="@string/title_activity_speed_calc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"

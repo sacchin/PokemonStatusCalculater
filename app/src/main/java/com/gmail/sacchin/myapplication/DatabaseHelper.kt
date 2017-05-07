@@ -1,13 +1,16 @@
 package com.gmail.sacchin.myapplication
 
 import android.content.Context
+import com.gmail.sacchin.myapplication.entity.MegaPokemonMasterData
+import com.gmail.sacchin.myapplication.entity.PokemonMasterData
+import com.gmail.sacchin.myapplication.entity.Speed
 import com.gmail.sacchin13.pokemonbattleanalyzer.entity.Type
 import io.realm.Realm
 import io.realm.Sort
 import java.util.*
 import kotlin.properties.Delegates
 
-class DatabaseHelper(context: Context) {
+open class DatabaseHelper(context: Context) {
     var realm: Realm by Delegates.notNull()
 
     init {
@@ -92,10 +95,32 @@ class DatabaseHelper(context: Context) {
         }
     }
 
+    fun insertSpeed() {
+        realm.executeTransaction {
+            val s = mutableSetOf<Int>()
+            selectAllPokemonMasterData().map { s.add(it.s) }
+            s.forEach { bs ->
+                arrayOf(0, 4, 252).forEach { ev ->
+                    arrayOf(false, true).forEach { characteristic ->
+                        Speed.OTHER_CORRECTION.forEach { correction ->
+                            realm.createObject(Speed::class.java).apply {
+                                this.bs = bs
+                                this.ev = ev
+                                this.characteristic = characteristic
+                                this.other = correction
+                                this.av = PokemonMasterData.otherFormula(bs, 31, ev)
+                                        .times(charCorrection()).toInt().times(otherCorrection()).toInt()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     fun insertMegaPokemonDataY(no: String, h: Int, a: Int, b: Int, c: Int, d: Int, s: Int, ability: String, weight: Float) {
         insertMegaPokemonDataY(no, h, a, b, c, d, s, Type.no(Type.Code.UNKNOWN), Type.no(Type.Code.UNKNOWN), ability, weight)
     }
-
 
     fun selectPokemonMasterData(pokemonNo: String?): PokemonMasterData {
         val pokemon = realm.where(PokemonMasterData().javaClass).equalTo("no", pokemonNo).findFirst()
@@ -121,4 +146,11 @@ class DatabaseHelper(context: Context) {
         return result
     }
 
+    fun selectAllSpeed(): ArrayList<Speed> {
+        val list = realm.where(Speed().javaClass).findAll()
+
+        val result = ArrayList<Speed>()
+        list.map { result.add(it) }
+        return result
+    }
 }

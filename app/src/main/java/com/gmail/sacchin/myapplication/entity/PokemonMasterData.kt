@@ -1,5 +1,6 @@
-package com.gmail.sacchin.myapplication
+package com.gmail.sacchin.myapplication.entity
 
+import com.gmail.sacchin.myapplication.entity.MegaPokemonMasterData
 import io.realm.RealmObject
 import io.realm.annotations.RealmClass
 
@@ -49,6 +50,20 @@ open class PokemonMasterData(
             return PokemonMasterData(no, jname, ename, form, h, a, b, c, d, s,
                     ability1, ability2, abilityd, type1, type2, weight, megax, megay)
         }
+
+        fun hpFormula(bs: Int, iv: Int, ev: Int): Int {
+            val baseStat = if (bs < 0) 1 else bs
+            val effort = if (ev < 0 || 252 < ev) 0 else ev
+            val individual = if (iv < 0 || 31 < iv) 0 else iv
+            return (baseStat * 2 + individual + effort / 4) / 2 + 60
+        }
+
+        fun otherFormula(bs: Int, iv: Int, ev: Int): Int {
+            val baseStat = if (bs < 0) 1 else bs
+            val effort = if (ev < 0 || 252 < ev) 0 else ev
+            val individual = if (iv < 0 || 31 < iv) 0 else iv
+            return (baseStat * 2 + individual + effort / 4) / 2 + 5
+        }
     }
 
     fun battling(): Array<String> {
@@ -62,20 +77,6 @@ open class PokemonMasterData(
         if (megay != null) result.add("Y")
 
         return result.toTypedArray()
-    }
-
-    fun hpFormula(bs: Int, iv: Int, ev: Int): Int {
-        val baseStat = if (bs < 0) 1 else bs
-        val effort = if (ev < 0 || 252 < ev) 0 else ev
-        val individual = if (iv < 0 || 31 < iv) 0 else iv
-        return (baseStat * 2 + individual + effort / 4) / 2 + 60
-    }
-
-    fun otherFormula(bs: Int, iv: Int, ev: Int): Int {
-        val baseStat = if (bs < 0) 1 else bs
-        val effort = if (ev < 0 || 252 < ev) 0 else ev
-        val individual = if (iv < 0 || 31 < iv) 0 else iv
-        return (baseStat * 2 + individual + effort / 4) / 2 + 5
     }
 
     fun hp(iv: Int, ev: Int): Int = hpFormula(h, iv, ev)

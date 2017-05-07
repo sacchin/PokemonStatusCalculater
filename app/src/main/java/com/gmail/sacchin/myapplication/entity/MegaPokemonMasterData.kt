@@ -1,4 +1,4 @@
-package com.gmail.sacchin.myapplication
+package com.gmail.sacchin.myapplication.entity
 
 import io.realm.RealmObject
 
