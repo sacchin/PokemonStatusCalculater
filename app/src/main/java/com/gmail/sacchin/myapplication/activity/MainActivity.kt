@@ -1,10 +1,15 @@
-package com.gmail.sacchin.myapplication
+package com.gmail.sacchin.myapplication.activity
 
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.gmail.sacchin.myapplication.DatabaseHelper
+import com.gmail.sacchin.myapplication.MegaPokemonInsertHandler
+import com.gmail.sacchin.myapplication.PokemonInsertHandler
+import com.gmail.sacchin.myapplication.R
+import com.gmail.sacchin.myapplication.activity.AllCalcActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.onClick
 import kotlin.properties.Delegates

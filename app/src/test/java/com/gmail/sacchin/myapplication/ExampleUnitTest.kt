@@ -1,5 +1,7 @@
 package com.gmail.sacchin.myapplication
 
+import com.gmail.sacchin.myapplication.entity.PokemonMasterData
+import com.gmail.sacchin.myapplication.entity.Speed
 import org.junit.Assert
 import org.junit.Assert.assertEquals
 import org.junit.Before

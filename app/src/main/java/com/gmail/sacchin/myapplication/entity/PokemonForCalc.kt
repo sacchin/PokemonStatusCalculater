@@ -1,5 +1,7 @@
-package com.gmail.sacchin.myapplication
+package com.gmail.sacchin.myapplication.entity
 
+import com.gmail.sacchin.myapplication.entity.MegaPokemonMasterData
+import com.gmail.sacchin.myapplication.entity.PokemonMasterData
 import com.gmail.sacchin13.pokemonbattleanalyzer.entity.Characteristic
 import kotlin.properties.Delegates
 

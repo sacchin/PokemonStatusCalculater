@@ -12,4 +12,7 @@
     <string name="header_d">D</string>
     <string name="header_s">S</string>
     <string name="default_value">0</string>
+    <string name="characteristic">性格</string>
+    <string name="min">min</string>
+    <string name="max">max</string>
 </resources>

@@ -1,6 +1,9 @@
 package com.gmail.sacchin.myapplication
 
 import android.content.Context
+import com.gmail.sacchin.myapplication.entity.MegaPokemonMasterData
+import com.gmail.sacchin.myapplication.entity.PokemonMasterData
+import com.gmail.sacchin.myapplication.entity.Speed
 import com.gmail.sacchin13.pokemonbattleanalyzer.entity.Type
 import io.realm.Realm
 import io.realm.Sort

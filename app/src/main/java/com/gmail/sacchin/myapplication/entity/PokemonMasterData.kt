@@ -1,5 +1,6 @@
-package com.gmail.sacchin.myapplication
+package com.gmail.sacchin.myapplication.entity
 
+import com.gmail.sacchin.myapplication.entity.MegaPokemonMasterData
 import io.realm.RealmObject
 import io.realm.annotations.RealmClass
 
